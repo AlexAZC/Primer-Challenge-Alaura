@@ -1,3 +1,39 @@
+let textareaEl = document.getElementById("textareaInput");
+let resultadoEl = document.getElementsByClassName("contenedorDerecho")
+
+   function encriptarTexto(){
+        const splitMensaje = textareaEl.value.split("");
+        let mensajeLoop = [];
+
+        for(let i = 0; i < splitMensaje.length; i++){
+            switch(splitMensaje[i]){
+                case "e":
+                    mensajeLoop.push("enter");
+                    break;
+                case "i":
+                    mensajeLoop.push("imes");
+                    break;
+                case "a":
+                    mensajeLoop.push("ai");
+                    break;
+                case "o":
+                    mensajeLoop.push("ober");
+                    break;
+                case "u":
+                    mensajeLoop.push("ufat");
+                    break;
+                default:
+                    mensajeLoop.push(splitMensaje[i]);
+            }
+        }
+
+        let mensajeEncriptado = mensajeLoop.join("");
+
+        console.log(mensajeEncriptado);
+        
+        
+   }
+
 /*
 const mensaje = "bienvenidos estudiantes";
 

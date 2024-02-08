@@ -26,7 +26,7 @@ main{
     width: 100%;
     height: 100%;
     display: flex;
-    padding: 8%;
+    padding: 60px;
 }
 
 .parteIzquierda{
@@ -39,6 +39,7 @@ main{
     margin: 68px 0 0 20%;
     border: none;
     width: 65%;
+    height: 58%;
     padding: .5rem;
     font-size: 32px;
     min-height: 3rem;
@@ -46,6 +47,10 @@ main{
     color:#0A3871;
     outline: none;
     resize: none;
+}
+
+.parteIzquierda textarea::placeholder{
+    color:#0A3871;
 }
 
 .parteIzquierda .seccionDeBotones{
@@ -93,7 +98,7 @@ main{
 }
 
 .parteDerecha{
-    height: auto;
+    height: 100%;
     width: 30%;
     background-color:#FFFFFF;
     padding: 0 3%;
@@ -104,12 +109,15 @@ main{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
-/* hacer que el contenedor derecho sea responsivo con el tamaño de los children */
-
 .contenedorDerecho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    height: auto;
-    padding-bottom: ;
+    height: 65%;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #D8DFE8 #D8DFE8;
 }
 
 .contenedorDerecho img{
@@ -123,6 +131,7 @@ main{
     color: #343A40;
     font-weight: 700;
     text-align: center;
+    margin-top: 20px;
     margin-bottom: 15px;
 }
 
@@ -138,18 +147,27 @@ main{
 
     body{
         overflow: auto;
+        height:auto;
+        width: 100vw;
     }
 
     main{
         display: flex;
         flex-direction: column;
-        height: 100%;
+        height: auto;
         width: 100%;
+        padding: 30px;
     }
 
     .parteIzquierda{
         width: 100%;
         height: 85%;
+    }
+
+    .parteIzquierda img{
+        content: url("imagenes/Vector.png");
+        width: 32px;
+        height: auto;
     }
 
     .parteIzquierda textarea{
@@ -159,12 +177,8 @@ main{
         color:#0A3871;
     }
 
-    .parteIzquierda textarea::placeholder{
-        color:#0A3871;
-    }
-
     .parteIzquierda .seccionDeBotones{
-        width: 90%;
+        width: calc(100% - 60px) ;
         height: auto;
         position: absolute;
         bottom: 24.5%;
@@ -182,14 +196,14 @@ main{
 
     .parteIzquierda .seccionDeBotones button{
         display: inline-block;
-        padding: 4.2%;
-        width: 45%;
+        padding: 4%;
+        width: 47.82%;
         border: none;
         border-radius: 24px;
     }
 
     .parteIzquierda .seccionDeBotones #botonEncriptar{
-        margin:12px 2.5% 0 0;
+        margin:12px 12px 0 0;
         background-color: #0A3871;
         color: #FFFFFF;
         font-weight: 400;
@@ -198,7 +212,9 @@ main{
 
     .parteDerecha{
         width: 100%;
-        height: 15%;
+        height: auto;
+        padding: 8px 15px 30px;
+        margin-top: 490px;
     }
 
     .parteDerecha img{
@@ -207,8 +223,12 @@ main{
         height: 0;
     }
 
+    .contenedorDerecho{
+        height: auto;
+    }
+
     .contenedorDerecho h3{
-        font-size: 18px/*2.8vw*/;
+        font-size: 20px/*2.8vw*/;
         color: #343A40;
         font-weight: 700;
         text-align: center;
@@ -219,7 +239,7 @@ main{
         color: #495057;
         text-align: center;
         font-weight: 400;
-        font-size: 13px;
+        font-size: 14px;
     }
     
 
@@ -282,8 +302,11 @@ main{
         font-family:"Inter", sans-serif;
     }
 
-    .parteDerecha {
-        height: 20%;
+    .parteDerecha{
+        width: 100%;
+        height: auto;
+        padding: 8px 15px 30px;
+        margin-top: 450px;
     }
 
     .contenedorDerecho h3{
@@ -298,7 +321,7 @@ main{
         color: #495057;
         text-align: center;
         font-weight: 400;
-        font-size: 15px;
+        font-size: 16px;
     }
 }
 
