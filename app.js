@@ -1,5 +1,8 @@
 let textareaEl = document.getElementById("textareaInput");
-let resultadoEl = document.getElementsByClassName("contenedorDerecho")
+let resultado = document.querySelector(".parteDerecha");
+
+console.log(resultado);
+console.log(textareaEl);
 
    function encriptarTexto(){
         const splitMensaje = textareaEl.value.split("");
@@ -27,10 +30,11 @@ let resultadoEl = document.getElementsByClassName("contenedorDerecho")
             }
         }
 
-        let mensajeEncriptado = mensajeLoop.join("");
+        //let mensajeEncriptado = mensajeLoop.join("");
 
-        console.log(mensajeEncriptado);
-        
+        let mensajeEncriptado = `<p class="resultadoParrafo">${mensajeLoop.join("")}</p>`;
+        resultado.innerHTML = "";
+        resultado.insertAdjacentHTML("afterbegin",mensajeEncriptado);
         
    }
 
