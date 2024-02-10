@@ -1,10 +1,26 @@
 let textareaEl = document.getElementById("textareaInput");
 let resultado = document.querySelector(".parteDerecha");
+let advertenciaEl = document.querySelector(".advertencia");
+let iconoEl = document.querySelector(".icono");
+
+
 
 console.log(resultado);
 console.log(textareaEl);
 
    function encriptarTexto(){
+
+    if(verificarInput(textareaEl.value) === true){
+        advertenciaEl.style.color = "red";
+        iconoEl.setAttribute("fill","red");
+
+       return setTimeout(() => {
+            advertenciaEl.style.color = "#495057";
+            iconoEl.setAttribute("fill","#495057");
+        }, 2500)
+    }
+
+
         const splitMensaje = textareaEl.value.split("");
         let mensajeLoop = [];
 
@@ -30,13 +46,20 @@ console.log(textareaEl);
             }
         }
 
+    
         //let mensajeEncriptado = mensajeLoop.join("");
 
         let mensajeEncriptado = `<p class="resultadoParrafo">${mensajeLoop.join("")}</p>`;
         resultado.innerHTML = "";
         resultado.insertAdjacentHTML("afterbegin",mensajeEncriptado);
         
+        
    }
+
+   function verificarInput(value) {
+    const regex = new RegExp("[^ a-z]");
+    return regex.test(value);
+}
 
 /*
 const mensaje = "bienvenidos estudiantes";
