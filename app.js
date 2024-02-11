@@ -41,10 +41,15 @@ let iconoEl = document.querySelector(".icono");
                         mensajeLoop.push(splitMensaje[i]);
                                     }
                                 }
+
+                let mensajeUnido = mensajeLoop.join("");
                             
-                let mensajeEncriptado = `<p class="resultadoParrafo">${mensajeLoop.join("")}</p>`;
+                let mensajeEncriptado = `<p class="resultadoParrafo">${mensajeUnido}</p>`;
+                // Falta arreglar esta parte para copiar el contenido
+                let botonCopiar = `<button onclick="() => console.log("Hola")" class="copiarTexto">Copiar Texto</button>`
                 resultado.innerHTML = "";
                 resultado.insertAdjacentHTML("afterbegin",mensajeEncriptado);
+                resultado.insertAdjacentHTML("beforeend",botonCopiar);
                 return;     
             }
    }
@@ -56,6 +61,13 @@ let iconoEl = document.querySelector(".icono");
     const regex = new RegExp("[^ a-z]");
     return regex.test(value);
         }
+
+/************** CREANDO LA FUNCIÓN DE COPIAR  *************/
+   
+    function copiarParrafo(value) {
+        console.log(value);
+        return;
+    }
 
 
 /************** CREANDO LA FUNCIÓN DE DESENCRIPTAR  *************/
