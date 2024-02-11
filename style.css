@@ -143,7 +143,7 @@ main{
 
 .parteDerecha .resultadoParrafo {
     font-size: 24px;
-    padding: 20px 0;
+    padding: 20px 10px;
     width: 100%;
     word-wrap: break-word;
 }
@@ -167,7 +167,7 @@ main{
 
     .parteIzquierda{
         width: 100%;
-        height: 85%;
+        height: auto;
     }
 
     .parteIzquierda img{
@@ -179,16 +179,17 @@ main{
     .parteIzquierda textarea{
         margin: 38px 0 0;
         width: 98%;
-        height: 407px;
+        min-height: 210px;
         color:#0A3871;
+        margin-bottom: 40px;
+
     }
 
     .parteIzquierda .seccionDeBotones{
-        width: calc(100% - 60px) ;
+        width: 100%;
         height: auto;
-        position: absolute;
-        bottom: 24.5%;
-        left: auto;
+        position: static;
+        margin: 0 auto 40px;
     }
 
     .parteIzquierda .seccionDeBotones .iconText{
@@ -219,7 +220,6 @@ main{
         width: 100%;
         height: auto;
         padding: 8px 15px 30px;
-        margin-top: 183px;
     }
 
     .parteDerecha img{
@@ -254,14 +254,6 @@ main{
 
     main{
         padding:8% 4%;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        width: 100%;
-    }
-
-    .parteIzquierda{
-        height: 80%;
     }
 
     .parteIzquierda img{
@@ -271,18 +263,13 @@ main{
     }
 
     .parteIzquierda textarea{
-        margin: 38px 0 0 0;
         width: 100%;
         height: auto;
-        min-height: 285px;
     }
 
     .parteIzquierda .seccionDeBotones{
-        width: 90%;
+        width: 96%;
         height: auto;
-        position: absolute;
-        bottom: 28.5%;
-        left: auto;
     }
 
     .parteIzquierda .seccionDeBotones .iconText{
@@ -296,8 +283,6 @@ main{
         display: block;
         padding: 8% 0;
         width: 100%;
-        border: none;
-        border-radius: 24px;
     }
 
     .parteIzquierda .seccionDeBotones #botonEncriptar{
@@ -312,11 +297,10 @@ main{
         width: 100%;
         height: auto;
         padding: 8px 15px 30px;
-        margin-top: 30vh;
     }
 
     .contenedorDerecho h3{
-        font-size: 24px/*2.8vw*/;
+        font-size: 24px;
         color: #343A40;
         font-weight: 700;
         text-align: center;
