@@ -3,6 +3,8 @@ let resultado = document.querySelector(".parteDerecha");
 let advertenciaEl = document.querySelector(".advertencia");
 let iconoEl = document.querySelector(".icono");
 
+
+
 /************** CREANDO LA FUNCIÓN DE ENCRIPTAR  *************/
 
    function encriptarTexto(){
@@ -10,10 +12,12 @@ let iconoEl = document.querySelector(".icono");
     if(verificarInput(textareaEl.value) === true){
         advertenciaEl.style.color = "red";
         iconoEl.setAttribute("fill","red");
+        advertenciaEl.style.fontSize = "16px";
 
        return setTimeout(() => {
             advertenciaEl.style.color = "#495057";
             iconoEl.setAttribute("fill","#495057");
+            advertenciaEl.style.fontSize = "12px";
         }, 2500);
 
     } else {
@@ -45,11 +49,21 @@ let iconoEl = document.querySelector(".icono");
                 let mensajeUnido = mensajeLoop.join("");
                             
                 let mensajeEncriptado = `<p class="resultadoParrafo">${mensajeUnido}</p>`;
-                // Falta arreglar esta parte para copiar el contenido
-                let botonCopiar = `<button onclick="() => console.log("Hola")" class="copiarTexto">Copiar Texto</button>`
+                let botonCopiar = `<button class="copiarTexto">Copiar Texto</button>`;
                 resultado.innerHTML = "";
                 resultado.insertAdjacentHTML("afterbegin",mensajeEncriptado);
                 resultado.insertAdjacentHTML("beforeend",botonCopiar);
+                const funcBoton = document.querySelector(".copiarTexto");
+                funcBoton.addEventListener("click", () => {
+                    navigator.clipboard.writeText(mensajeUnido);
+                    funcBoton.style.backgroundColor = "#4ef037";
+                    funcBoton.innerHTML = "Texto Copiado"
+                    setTimeout(() => {
+                        funcBoton.style.backgroundColor = "#464e47";
+                        funcBoton.style.color = "#FFFFFF";
+                        funcBoton.innerHTML = "Copiar Texto"
+                    },1500);
+                })
                 return;     
             }
    }
@@ -90,8 +104,21 @@ let iconoEl = document.querySelector(".icono");
             let changeU = changeO.replaceAll(/ufat/gi,"u");
 
             let mensajeEncriptado = `<p class="resultadoParrafo">${changeU}</p>`;
+            let botonCopiar = `<button class="copiarTexto">Copiar Texto</button>`;
                 resultado.innerHTML = "";
                 resultado.insertAdjacentHTML("afterbegin",mensajeEncriptado);
+                resultado.insertAdjacentHTML("beforeend",botonCopiar);
+                const funcBoton = document.querySelector(".copiarTexto");
+                funcBoton.addEventListener("click", () => {
+                    navigator.clipboard.writeText(changeU);
+                    funcBoton.style.backgroundColor = "#4ef037";
+                    funcBoton.innerHTML = "Texto Copiado"
+                    setTimeout(() => {
+                        funcBoton.style.backgroundColor = "#464e47";
+                        funcBoton.style.color = "#FFFFFF";
+                        funcBoton.innerHTML = "Copiar Texto"
+                    },1500);
+                })
                 return;    
         }
     }
